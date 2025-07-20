@@ -43,7 +43,7 @@ Para iniciar o RabbitMQ localmente com painel de gerenciamento:
 ```bash
 docker run -d --hostname rabbit-host --name rabbit \
 -p 5672:5672 -p 15672:15672 rabbitmq:3-management
-
+```
 # 🐰 RabbitMQ com Python – Guia Prático (Dia 2)
 
 ## Objetivo
