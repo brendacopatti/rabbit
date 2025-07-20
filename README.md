@@ -43,3 +43,28 @@ Para iniciar o RabbitMQ localmente com painel de gerenciamento:
 ```bash
 docker run -d --hostname rabbit-host --name rabbit \
 -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+
+# 🐰 RabbitMQ com Python – Guia Prático (Dia 2)
+
+## Objetivo
+
+Foi criado um **Producer** e um **Consumer** em Python para enviar e receber mensagens usando RabbitMQ.
+
+## O que foi feito
+
+- Foi criado um Producer que envia uma mensagem para uma fila chamada `fila_pedidos`.
+- Foi criado um Consumer que escuta essa mesma fila e processa as mensagens recebidas.
+- Foi utilizado o `queue_declare` para garantir que a fila existisse antes de ser usada.
+- No Consumer, foi aplicada a confirmação automática (`auto_ack=True`) para simplificar o fluxo neste primeiro teste.
+
+## Como testar
+
+- Primeiramente, o Consumer deve ser executado para escutar as mensagens.
+- Em seguida, o Producer é executado para enviar uma mensagem para a fila.
+- Quando a mensagem é enviada, o Consumer exibe a mensagem no console.
+
+## O que foi aprendido
+
+- É importante declarar a fila antes de usá-la para evitar erros.
+- A confirmação automática facilita testes rápidos, mas para produção é recomendado usar confirmação manual para garantir segurança no processamento.
+- Essa prática ajudou a entender o fluxo básico de mensageria com RabbitMQ e Python.
